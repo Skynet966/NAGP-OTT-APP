@@ -6,7 +6,15 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { HeaderComponent } from './layout/header/header.component';
-import { SearchComponent } from './layout/header/search/search.component';
+import { SearchComponent } from './layout/header/top-nav/search/search.component';
+import { TopNavComponent } from './layout/header/top-nav/top-nav.component';
+import { CategoriesComponent } from './layout/categories/categories.component';
+import { MediaComponent } from './media/media.component';
+import { MoviesComponent } from './media/movies/movies.component';
+import { TvShowsComponent } from './media/tv-shows/tv-shows.component';
+import { PlaylistsComponent } from './media/playlists/playlists.component';
+import { NewArrivalsComponent } from './media/new-arrivals/new-arrivals.component';
+import { MediaCardComponent } from './media/media-card/media-card.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +22,18 @@ import { SearchComponent } from './layout/header/search/search.component';
     LayoutComponent,
     SideNavComponent,
     HeaderComponent,
-    SearchComponent
+    SearchComponent,
+    TopNavComponent,
+    CategoriesComponent,
+    MediaComponent,
+    MoviesComponent,
+    TvShowsComponent,
+    PlaylistsComponent,
+    NewArrivalsComponent,
+    MediaCardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
