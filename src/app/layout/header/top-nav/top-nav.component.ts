@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-top-nav',
@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-nav.component.sass'],
 })
 export class TopNavComponent implements OnInit {
+  @Output() searchText: EventEmitter<string> = new EventEmitter();
   constructor() {}
+  onSearchChange(event: Event) {
+    this.searchText.emit((event.target as HTMLInputElement).value);
+  }
 
   ngOnInit(): void {}
 }

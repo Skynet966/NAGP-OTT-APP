@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { IMovie } from './../../../../media/movies/model/IMovie.interface';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.sass'],
 })
 export class SearchComponent implements OnInit {
+  @Input() searchedMovieResults: IMovie[] | undefined;
   constructor() {}
 
   ngOnInit(): void {}
