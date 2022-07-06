@@ -1,3 +1,5 @@
+import { AuthUser } from './../../shared/services/auth.service';
+import { User } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-nav.component.sass'],
 })
 export class SideNavComponent implements OnInit {
-  constructor() {}
+  user: User | undefined;
+  constructor(public authUser: AuthUser) {
+    this.user = authUser.user;
+  }
 
   ngOnInit(): void {}
 }

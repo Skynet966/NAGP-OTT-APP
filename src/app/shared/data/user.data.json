@@ -1,0 +1,38 @@
+[
+  {
+    "name": "satish",
+    "email": "satish@gmail.com",
+    "password": "satish@123",
+    "movies": {
+      "watched": [],
+      "favorite": [],
+      "watchLater": []
+    },
+    "isPrime": true,
+    "isAdmin": true
+  },
+  {
+    "name": "nitin",
+    "email": "nitin@gmail.com",
+    "password": "nitin@123",
+    "movies": {
+      "watched": [],
+      "favorite": [],
+      "watchLater": []
+    },
+    "isPrime": true,
+    "isAdmin": false
+  },
+  {
+    "name": "rohit",
+    "email": "rohit@gmail.com",
+    "password": "rohit@123",
+    "movies": {
+      "watched": [],
+      "favorite": [],
+      "watchLater": []
+    },
+    "isPrime": false,
+    "isAdmin": false
+  }
+]

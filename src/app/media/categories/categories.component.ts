@@ -1,3 +1,6 @@
+import { CategoriesService } from './../../shared/services/categories.service';
+import { Genre } from 'src/app/shared/enums/genre.enum';
+import { Category } from './model/category.model';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
@@ -8,8 +11,19 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class CategoriesComponent implements OnInit {
   @ViewChild('widgetsContent', { read: ElementRef })
   public widgetsContent!: ElementRef<any>;
+  categories: string[] = [];
+  selectedCategory: number = 0;
 
-  constructor() {}
+  constructor(public categoryService: CategoriesService) {
+    this.categories = categoryService.categories;
+  }
+
+  ngOnInit(): void {}
+
+  public onCategorySelect(index: number = 0) {
+    this.selectedCategory = index;
+    this.categoryService.changeSelectedCategory(index);
+  }
 
   public scrollRight(): void {
     this.widgetsContent.nativeElement.scrollTo({
@@ -24,6 +38,4 @@ export class CategoriesComponent implements OnInit {
       behavior: 'smooth',
     });
   }
-
-  ngOnInit(): void {}
 }

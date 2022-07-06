@@ -1,1 +1,41 @@
-<p>playlists works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-3">
+      <h2>Watch Later</h2>
+    </div>
+    <ng-container *ngIf="watchLaterMovies; else watchLaterMovies_not_available">
+      <div class="col-md-3" *ngFor="let movie of watchLaterMovies">
+        <app-media-card [movie]="movie"></app-media-card>
+      </div>
+    </ng-container>
+    <ng-template #watchLaterMovies_not_available>
+      <span>You have not selected any movie to watch it later.</span>
+    </ng-template>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Watched</h2>
+    </div>
+    <ng-container *ngIf="watchedMovies; else watchedMovies_not_available">
+      <div class="col-md-3" *ngFor="let movie of watchedMovies">
+        <app-media-card [movie]="movie"></app-media-card>
+      </div>
+    </ng-container>
+    <ng-template #watchedMovies_not_available>
+      <span>You do not watech a single movie on our platform yet!!</span>
+    </ng-template>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Favorites</h2>
+    </div>
+    <ng-container *ngIf="favoritesMovies; else favoritesMovies_not_available">
+      <div class="col-md-3" *ngFor="let movie of favoritesMovies">
+        <app-media-card [movie]="movie"></app-media-card>
+      </div>
+    </ng-container>
+    <ng-template #favoritesMovies_not_available>
+      <span>You don't find your favorite movies yet!!</span>
+    </ng-template>
+  </div>
+</div>

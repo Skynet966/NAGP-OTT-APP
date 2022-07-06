@@ -1,3 +1,12 @@
-<div *ngFor="let movie of movies">
-  <app-media-card [movie]="movie"></app-media-card>
+<div class="container">
+  <div class="row" *ngFor="let category of categories">
+    <div class="col-md-12">
+      <h2>{{ category }}</h2>
+    </div>
+    <ng-container *ngFor="let movie of movies">
+      <div class="col-md-3" *ngIf="movie.genre.indexOf(category) > 0">
+        <app-media-card [movie]="movie"></app-media-card>
+      </div>
+    </ng-container>
+  </div>
 </div>

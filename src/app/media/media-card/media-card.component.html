@@ -1,6 +1,11 @@
 <div class="media-container">
-  <a href="#" class="media__link">
-    <img src="{{ movie.image }}" alt="media art" class="media__art" />
+  <a routerLink="/Movies/{{ movie.title }}" class="media__link">
+    <img
+      src="{{ movie.image }}"
+      alt="media art"
+      class="media__art"
+      onerror='this.onerror=null;this.src="https://progression-studios.com/skrn/images/demo/listing-1.jpg"'
+    />
     <span class="media__info__container">
       <div class="media__info">
         <h6 class="media__text">

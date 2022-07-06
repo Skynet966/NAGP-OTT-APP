@@ -1,0 +1,41 @@
+<div
+  class="movie__details__container"
+  *ngIf="selectedMovie; else movie_not_available"
+>
+  <div class="movie__poster__container">
+    <img
+      src="{{ selectedMovie.image }}"
+      alt="media art"
+      class="movie__poster"
+      onerror='this.onerror=null;this.src="https://progression-studios.com/skrn/images/demo/listing-1.jpg"'
+    />
+  </div>
+  <div class="movie__info__container">
+    <div class="movie__title__container">
+      <h1 class="movie__title">{{ selectedMovie.title }}</h1>
+    </div>
+    <div class="other__info">
+      <div class="info">
+        <h4>IMDB Ratings</h4>
+        <span>{{ selectedMovie.imdbRatings }}</span>
+      </div>
+      <div class="info">
+        <h4>Language</h4>
+        <span>{{ selectedMovie.language }}</span>
+      </div>
+      <div class="info">
+        <h4>Genre</h4>
+        <span>{{ selectedMovie.genre }}</span>
+      </div>
+    </div>
+    <div class="movie__desc__container">
+      <h3>Description</h3>
+      <p class="movie__desc">
+        {{ selectedMovie.description }}
+      </p>
+    </div>
+  </div>
+</div>
+<ng-template #movie_not_available>
+  <span>You have not selected any movie to watch it later.</span>
+</ng-template>

@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12"><app-categories></app-categories></div>
+  </div>
+  <div class="row">
     <div class="col-md-12 py-3">
-      <h1>Latest Added Movies</h1>
+      <h1>{{ category }}</h1>
     </div>
     <ng-container *ngIf="movies.length > 0; else movie_not_available">
       <div class="col-md-3" *ngFor="let movie of movies">
