@@ -13,6 +13,7 @@
         class="category__image"
         src="assets/images/categories/{{ category.toLowerCase() }}.png"
         alt="{{ category }}"
+        onerror='this.onerror=null;this.src="assets/images/categories/comedy.png"'
       />
       <span class="category__name">{{ category }}</span>
     </li>
