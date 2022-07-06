@@ -22,3 +22,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 * Users add movies in Favourite/Watched/Watch Later List
 * User can opt prime membership to watch movies.
 * Category Tree Implemented
+
+## Test User Creds
+* email: satish@gmail.com & password: satish@123 [admin user]
+* rohit: rohit@gmail.com & password: rohit@123 [non-admin user]
+* nitin: nitin@gmail.com & password: nitin@123 [non-admin user with pre-prime enabled]
