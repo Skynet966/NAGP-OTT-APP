@@ -32,4 +32,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 * Added movie removed
 * reviews removed
 * user playlist items rest
-* registred user removed
+* registered user removed
