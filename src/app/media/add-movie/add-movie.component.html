@@ -4,36 +4,26 @@
       <div class="row">
         <div class="col-md-12"><label for="">Movie Name</label></div>
         <div class="col-md-12">
-          <input type="text" name="movieName" id="movieName" />
+          <input type="text" [(ngModel)]="name" />
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12"><label for="">Movie Name</label></div>
+        <div class="col-md-12"><label for="">Movie Description</label></div>
         <div class="col-md-12">
-          <input type="text" name="movieName" id="movieName" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12"><label for="">Movie Name</label></div>
-        <div class="col-md-12">
-          <input type="text" name="movieName" id="movieName" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12"><label for="">Movie Name</label></div>
-        <div class="col-md-12">
-          <input type="text" name="movieName" id="movieName" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12"><label for="">Movie Name</label></div>
-        <div class="col-md-12">
-          <input type="text" name="movieName" id="movieName" />
+          <input type="text" [(ngModel)]="description" />
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <input type="submit" name="submit" id="submit" />
+          <label for="">Movie ratings between 1-10</label>
+        </div>
+        <div class="col-md-12">
+          <input type="number" [(ngModel)]="imdbRatings" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button (click)="addNewMovie()">Add Movie</button>
         </div>
       </div>
     </div>

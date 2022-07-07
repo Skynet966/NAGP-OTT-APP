@@ -1,5 +1,5 @@
 import { UtilityHelper } from './../helpers/utility.helpers';
-import { IMovie } from './../../media/movies/model/IMovie.interface';
+import { IMovie, IReview } from './../../media/movies/model/IMovie.interface';
 import moviesData from '../data/movies.data.json';
 import { Injectable } from '@angular/core';
 
@@ -14,6 +14,7 @@ interface MovieData {
   plot: string;
   posterUrl: string;
 }
+
 @Injectable()
 export class MoviesService {
   movies: IMovie[] = [];
@@ -30,5 +31,11 @@ export class MoviesService {
         reviews: [],
       })
     );
+  }
+  addMovieReview(review: IReview, title: string) {
+    let index = this.movies.findIndex((x) => x.title === title);
+    if (index > -1) {
+      this.movies[index].reviews.push(review);
+    }
   }
 }

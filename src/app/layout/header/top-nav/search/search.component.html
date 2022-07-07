@@ -1,7 +1,11 @@
 <div class="search__container">
-  <div class="container mt-4" *ngIf="searchedMovieResults">
+  <div class="container-fluid mt-3" *ngIf="searchedMovieResults.length">
     <div class="row">
-      <div class="col-md-3" *ngFor="let movie of searchedMovieResults">
+      <div
+        class="col-md-3"
+        *ngFor="let movie of searchedMovieResults"
+        (click)="clearSearch(movie.title)"
+      >
         <app-media-card [movie]="movie"></app-media-card>
       </div>
     </div>

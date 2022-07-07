@@ -3,7 +3,9 @@
     <div class="col-md-12 mt-3">
       <h2>Watch Later</h2>
     </div>
-    <ng-container *ngIf="watchLaterMovies; else watchLaterMovies_not_available">
+    <ng-container
+      *ngIf="watchLaterMovies.length; else watchLaterMovies_not_available"
+    >
       <div class="col-md-3" *ngFor="let movie of watchLaterMovies">
         <app-media-card [movie]="movie"></app-media-card>
       </div>
@@ -16,7 +18,9 @@
     <div class="col-md-12">
       <h2>Watched</h2>
     </div>
-    <ng-container *ngIf="watchedMovies; else watchedMovies_not_available">
+    <ng-container
+      *ngIf="watchedMovies.length; else watchedMovies_not_available"
+    >
       <div class="col-md-3" *ngFor="let movie of watchedMovies">
         <app-media-card [movie]="movie"></app-media-card>
       </div>
@@ -29,7 +33,9 @@
     <div class="col-md-12">
       <h2>Favorites</h2>
     </div>
-    <ng-container *ngIf="favoritesMovies; else favoritesMovies_not_available">
+    <ng-container
+      *ngIf="favoritesMovies.length; else favoritesMovies_not_available"
+    >
       <div class="col-md-3" *ngFor="let movie of favoritesMovies">
         <app-media-card [movie]="movie"></app-media-card>
       </div>

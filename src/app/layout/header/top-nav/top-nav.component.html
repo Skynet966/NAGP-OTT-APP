@@ -16,11 +16,41 @@
           type="text"
           placeholder="Search for Movies or TV Series"
           aria-label="Search"
-          (input)="onSearchChange($event)"
+          [(ngModel)]="searchText"
+          (input)="onSearchChange()"
         />
       </div>
       <div class="right__container">
-        <div class="auth__container">LogIn</div>
+        <div
+          class="auth__container"
+          *ngIf="user; else user_name"
+          (click)="onToggleDropdown()"
+        >
+          <span class="auth__text">{{ user?.name }}</span>
+        </div>
+        <div class="dropdown__continer" *ngIf="isDropdownOpen">
+          <ul class="links__container">
+            <li class="link__container">
+              <input
+                type="checkbox"
+                id="prime__checkbox"
+                [checked]="primeStatus"
+                (click)="activatePrime($event)"
+              />
+              <label for="prime__checkbox" class="link">Prime</label>
+            </li>
+            <li class="link__container">
+              <span class="link" (click)="logoutUser()">Logout</span>
+            </li>
+          </ul>
+        </div>
+        <ng-template #user_name>
+          <div class="auth__container">
+            <a routerLink="login" class="auth__text">
+              LogIn
+            </a>
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>

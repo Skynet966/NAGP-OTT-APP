@@ -6,5 +6,10 @@ export interface IMovie {
   language: string[];
   genre: string[];
   image: string;
-  reviews: { name: string; email: string; message: string }[];
+  reviews: IReview[];
+}
+export interface IReview {
+  name: string;
+  email: string;
+  message: string;
 }

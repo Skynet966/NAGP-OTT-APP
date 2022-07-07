@@ -1,3 +1,4 @@
+import { SearchService } from './../../shared/services/search.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../movies/model/movie.model';
 
@@ -10,7 +11,6 @@ export class MediaCardComponent implements OnInit {
   @Input()
   movie!: Movie;
 
-  constructor() {}
-
+  constructor(public searchService: SearchService) {}
   ngOnInit(): void {}
 }

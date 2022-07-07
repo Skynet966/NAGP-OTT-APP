@@ -1,3 +1,4 @@
+import { SearchService } from './shared/services/search.service';
 import { UserService } from './shared/services/user.service';
 import { AuthUser } from './shared/services/auth.service';
 import { UtilityHelper } from './shared/helpers/utility.helpers';
@@ -22,6 +23,9 @@ import { MediaCardComponent } from './media/media-card/media-card.component';
 import { HomeComponent } from './media/home/home.component';
 import { AddMovieComponent } from './media/add-movie/add-movie.component';
 import { MovieDetailsComponent } from './media/movie-details/movie-details.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,14 +44,17 @@ import { MovieDetailsComponent } from './media/movie-details/movie-details.compo
     HomeComponent,
     AddMovieComponent,
     MovieDetailsComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
     MoviesService,
     CategoriesService,
     UtilityHelper,
     AuthUser,
     UserService,
+    SearchService,
   ],
   bootstrap: [AppComponent],
 })

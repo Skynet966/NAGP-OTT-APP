@@ -1,31 +1,36 @@
 <nav class="side__nav">
   <ul class="nav__links">
     <li class="nav__link__container">
-      <a routerLink="/" class="nav__link">
+      <a
+        routerLink="/"
+        class="nav__link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
         <i class="bi bi-house nav__icon"></i>
         <span class="nav__text">Home</span>
       </a>
     </li>
     <li class="nav__link__container">
-      <a routerLink="/Movies" class="nav__link">
+      <a routerLink="/Movies" class="nav__link" routerLinkActive="active">
         <i class="bi bi-camera-reels nav__icon"></i>
         <span class="nav__text">Movies</span>
       </a>
     </li>
     <li class="nav__link__container" *ngIf="user">
-      <a routerLink="/Playlists" class="nav__link">
+      <a routerLink="/Playlists" class="nav__link" routerLinkActive="active">
         <i class="bi bi-collection-play nav__icon"></i>
         <span class="nav__text">Playlists</span>
       </a>
     </li>
     <li class="nav__link__container">
-      <a routerLink="/New-Arrivals" class="nav__link">
+      <a routerLink="/New-Arrivals" class="nav__link" routerLinkActive="active">
         <i class="bi bi-house nav__icon"></i>
         <span class="nav__text">New Arrivals</span>
       </a>
     </li>
     <li class="nav__link__container" *ngIf="user && user.isAdmin">
-      <a routerLink="/Add-Movie" class="nav__link">
+      <a routerLink="/Add-Movie" class="nav__link" routerLinkActive="active">
         <i class="bi bi-file-earmark-plus nav__icon"></i>
         <span class="nav__text">Add Movie</span>
       </a>

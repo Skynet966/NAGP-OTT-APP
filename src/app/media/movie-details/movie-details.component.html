@@ -34,6 +34,36 @@
         {{ selectedMovie.description }}
       </p>
     </div>
+    <div class="other__info">
+      <div class="info">
+        <button class="btn" (click)="onWatched()">
+          {{ watched ? 'Re-Watch' : 'Watch' }}
+        </button>
+      </div>
+      <div class="info">
+        <button class="btn" (click)="onWatchLater()">
+          {{ watchedLater ? 'Alredy added in watch later' : 'Watch Later' }}
+        </button>
+      </div>
+      <div class="info">
+        <button class="btn" (click)="onFavMovie()">
+          {{ favMovie ? 'Your favorite movie' : 'Add in favorite list' }}
+        </button>
+      </div>
+      <div class="info">
+        <input type="text" [(ngModel)]="review" />
+        <button class="btn" (click)="addReview()" *ngIf="review">
+          Add review
+        </button>
+      </div>
+    </div>
+    <div class="review__container">
+      <h2>Reviews</h2>
+      <div class="review" *ngFor="let review of selectedMovie.reviews">
+        <h5>{{ review.name }} | {{ review.email }}</h5>
+        <p>{{ review.message }}</p>
+      </div>
+    </div>
   </div>
 </div>
 <ng-template #movie_not_available>

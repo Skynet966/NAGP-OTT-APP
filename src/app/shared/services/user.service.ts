@@ -15,20 +15,27 @@ export interface User {
 @Injectable()
 export class UserService {
   @Output() useRegistred: EventEmitter<boolean> = new EventEmitter();
-  @Output() userPrimeActivated: EventEmitter<boolean> = new EventEmitter();
   users: User[] = usersData;
-  addUser(newUser: User) {
+  addUser(name: string, email: string, password: string) {
+    let newUser: User = {
+      name: name,
+      email: email,
+      password: password,
+      movies: {
+        watched: [],
+        favorite: [],
+        watchLater: [],
+      },
+      isPrime: false,
+      isAdmin: false,
+    };
     this.users.push(newUser);
     this.useRegistred.emit(true);
   }
-  togglePrimeMembership(email: string): boolean {
-    let index = this.users.findIndex((x) => x.email === email);
-    if (index > 0) {
-      this.users[index].isPrime = !this.users[index].isPrime;
-      this.userPrimeActivated.emit(true);
-      return true;
+  updateUser(user: User) {
+    let index = this.users.findIndex((x) => x.email === user.email);
+    if (index > -1) {
+      this.users[index] = user;
     }
-    this.userPrimeActivated.emit(false);
-    return false;
   }
 }

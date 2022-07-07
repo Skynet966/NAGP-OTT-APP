@@ -1,0 +1,19 @@
+<div class="container">
+  <input
+    type="text"
+    name="username"
+    id="username"
+    [(ngModel)]="username"
+    placeholder="Enter your username"
+  />
+  <input
+    type="text"
+    name="password"
+    id="password"
+    [(ngModel)]="password"
+    placeholder="Enter your password"
+  />
+  <button (click)="loginUser()">Login</button>
+  <hr />
+  <a routerLink="/register">Click here, If not already registered</a>
+</div>
