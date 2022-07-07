@@ -27,3 +27,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 * email: satish@gmail.com & password: satish@123 [admin user]
 * rohit: rohit@gmail.com & password: rohit@123 [non-admin user]
 * nitin: nitin@gmail.com & password: nitin@123 [non-admin user with pre-prime enabled]
+
+# NOTE:: Other than login following thing has been reset after refreshing the page.
+* Added movie removed
+* reviews removed
+* user playlist items rest
+* registred user removed
